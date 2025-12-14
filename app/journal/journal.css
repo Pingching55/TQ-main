@@ -1,0 +1,999 @@
+/* Trade Journal Specific Styles */
+
+/* Journal Header */
+.journal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.journal-title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.account-balance {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.journal-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.account-selector {
+  min-width: 200px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+/* Account Dropdown */
+.nav-account-dropdown {
+  position: relative;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.nav-account-dropdown:hover .account-dropdown-content {
+  display: block;
+}
+
+.account-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  min-width: 250px;
+  padding: 0.5rem 0;
+  margin-top: 0.25rem;
+}
+
+.dropdown-header {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0.25rem;
+}
+
+.dropdown-account-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: var(--text-primary);
+}
+
+.dropdown-account-item:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.dropdown-account-item.active {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.dropdown-account-item.active:hover {
+  background-color: var(--accent-hover);
+}
+
+.account-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.account-name {
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.account-balance {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.dropdown-account-item.active .account-balance {
+  opacity: 0.9;
+}
+
+/* Main Content */
+.main-content {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  margin-top: 4rem; /* Add top margin to account for fixed nav */
+}
+
+/* Trade Dialog */
+.trade-dialog {
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: none;
+}
+
+.theme-dark .trade-dialog {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+.trade-dialog .dialog-title {
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.theme-dark .trade-dialog .dialog-title {
+  color: #f9fafb;
+}
+
+.trade-dialog .dialog-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.theme-dark .trade-dialog .dialog-description {
+  color: #9ca3af;
+}
+
+.trade-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.trade-dialog .form-group {
+  margin-bottom: 0;
+}
+
+.trade-dialog .form-label {
+  display: block;
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.025em;
+}
+
+.theme-dark .trade-dialog .form-label {
+  color: #d1d5db;
+}
+
+.trade-dialog .form-input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.theme-dark .trade-dialog .form-input {
+  background-color: #374151;
+  border: 2px solid #4b5563;
+  color: #f9fafb;
+}
+
+.trade-dialog .form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.theme-dark .trade-dialog .form-input:focus {
+  background-color: #4b5563;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.trade-dialog .form-input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.form-textarea {
+  width: 100%;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  resize: vertical;
+  min-height: 80px;
+}
+
+.theme-dark .form-textarea {
+  background-color: #374151;
+  border: 2px solid #4b5563;
+  color: #f9fafb;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff;
+}
+
+.theme-dark .form-textarea:focus {
+  background-color: #4b5563;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+.form-textarea::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+  width: 100%;
+}
+
+.theme-dark .form-actions {
+  border-top-color: #374151;
+}
+
+/* Form-specific button styles */
+.btn-primary-form {
+  flex: 1;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary-form:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.btn-outline-form {
+  flex: 1;
+  background-color: #ffffff;
+  color: #6b7280;
+  border: 2px solid #e5e7eb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 2.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-dark .btn-outline-form {
+  background-color: #374151;
+  color: #d1d5db;
+  border-color: #4b5563;
+}
+
+.btn-outline-form:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .btn-outline-form:hover {
+  background-color: #4b5563;
+  color: #f9fafb;
+  border-color: #6b7280;
+}
+
+/* Trades Section */
+.trades-section {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.empty-icon {
+  height: 4rem;
+  width: 4rem;
+  color: var(--text-muted);
+  margin: 0 auto 1rem;
+}
+
+.empty-state p {
+  color: var(--text-primary);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-subtitle {
+  color: var(--text-muted) !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Trades List - Card Layout */
+.trades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.trade-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.trade-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-primary);
+}
+
+.trade-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.trade-card-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.trade-card-date {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.trade-card-pair {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--accent-primary);
+}
+
+.trade-card-setup {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 0.375rem;
+}
+
+.trade-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pnl-amount-large {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+}
+
+.trade-card-checklist {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.checklist-title {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+}
+
+.checklist-checkbox {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.checklist-checkbox:hover {
+  color: var(--accent-primary);
+}
+
+.checklist-text-checked {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.trade-card-notes {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.notes-title {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.notes-content {
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.trade-card-image {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.trade-thumbnail {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.trade-thumbnail:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Position Badge */
+.position-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.position-badge.long {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+}
+
+.position-badge.short {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* P&L Amount */
+.pnl-amount {
+  font-weight: 600;
+}
+
+.pnl-amount.profit {
+  color: #22c55e;
+}
+
+.pnl-amount.loss {
+  color: #ef4444;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-edit {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-edit:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--accent-primary);
+}
+
+.btn-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-delete:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .journal-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .journal-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .account-selector {
+    min-width: auto;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .trade-card-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .trade-card-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .trade-card-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pnl-amount-large {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .journal-title {
+    font-size: 1.5rem;
+  }
+
+  .trade-dialog,
+  .setup-dialog {
+    max-width: 95vw;
+    margin: 0 0.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .btn-primary-form,
+  .btn-outline-form {
+    width: 100%;
+  }
+
+  .position-badge {
+    font-size: 0.625rem;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    padding: 0.375rem;
+  }
+
+  .btn-edit svg,
+  .btn-delete svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .trade-card {
+    padding: 1rem;
+  }
+
+  .trade-card-pair {
+    font-size: 1rem;
+  }
+
+  .add-setup-section {
+    flex-direction: column;
+  }
+
+  .add-checklist-item {
+    flex-direction: column;
+  }
+}
+
+/* Select Component Overrides */
+.trades-section [data-radix-select-content] {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+}
+
+.trades-section [data-radix-select-item] {
+  color: var(--text-primary);
+  padding: 0.5rem 0.75rem;
+}
+
+.trades-section [data-radix-select-item]:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.trades-section [data-radix-select-item][data-highlighted] {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+/* Setup Management Dialog */
+.setup-dialog {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.theme-dark .setup-dialog {
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+.setup-dialog .dialog-title {
+  color: #111827;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.theme-dark .setup-dialog .dialog-title {
+  color: #f9fafb;
+}
+
+.setup-dialog .dialog-description {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.theme-dark .setup-dialog .dialog-description {
+  color: #9ca3af;
+}
+
+.setup-management {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.add-setup-section {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.add-setup-section .form-input {
+  flex: 1;
+  background-color: #f9fafb;
+  border: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.theme-dark .add-setup-section .form-input {
+  background-color: #374151;
+  border: 2px solid #4b5563;
+  color: #f9fafb;
+}
+
+.add-setup-section .form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+}
+
+.theme-dark .add-setup-section .form-input:focus {
+  background-color: #4b5563;
+  border-color: #60a5fa;
+}
+
+.add-setup-section .form-input::placeholder {
+  color: #9ca3af;
+}
+
+.add-setup-section .btn-primary {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.add-setup-section .btn-primary:hover {
+  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.setups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.setup-card {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+
+.theme-dark .setup-card {
+  background-color: #374151;
+  border: 1px solid #4b5563;
+}
+
+.setup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.theme-dark .setup-header {
+  border-bottom-color: #4b5563;
+}
+
+.setup-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.theme-dark .setup-name {
+  color: #f9fafb;
+}
+
+.btn-delete-small {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  padding: 0.375rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-dark .btn-delete-small {
+  color: #9ca3af;
+}
+
+.btn-delete-small:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.theme-dark .btn-delete-small:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
+
+.setup-checklist-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.setup-checklist-section .form-label {
+  color: #374151;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.theme-dark .setup-checklist-section .form-label {
+  color: #d1d5db;
+}
+
+.add-checklist-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.add-checklist-item .form-input {
+  flex: 1;
+  background-color: #ffffff;
+  border: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.theme-dark .add-checklist-item .form-input {
+  background-color: #1f2937;
+  border: 2px solid #4b5563;
+  color: #f9fafb;
+}
+
+.add-checklist-item .form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: #ffffff;
+}
+
+.theme-dark .add-checklist-item .form-input:focus {
+  background-color: #374151;
+  border-color: #60a5fa;
+}
+
+.add-checklist-item .form-input::placeholder {
+  color: #9ca3af;
+}
+
+.checklist-template-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checklist-template-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  color: #111827;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.theme-dark .checklist-template-item {
+  background-color: #1f2937;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.checklist-template-item:hover {
+  border-color: #d1d5db;
+}
+
+.theme-dark .checklist-template-item:hover {
+  border-color: #6b7280;
+}
+
+.btn-delete-icon {
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-dark .btn-delete-icon {
+  color: #9ca3af;
+}
+
+.btn-delete-icon:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+.theme-dark .btn-delete-icon:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+}
